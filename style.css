@@ -1,5 +1,21 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
 
+:root{
+    --gradient: linear-gradient(
+        45deg,
+        #ff5c26,
+        #ee7155 ,
+        #ce6658 , 
+        #b97465 ,
+        #9c7067 ,
+        #6d5752 ,
+        #634F4B ,
+        #393433 ,
+        #181717 ,
+        #070707 
+    );
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -38,20 +54,31 @@ button{
     font-weight: 700;
     outline: none;
     border: none;
-    background-color: black;
+    background-image: var(--gradient);
     color: white;
     padding: 13px 30px;
     cursor: pointer;
     text-transform: uppercase;
-    transition: 0.3s ease;
+    background-size: 300%;
+    background-position: right;
+    transition:background-position 1s;
+
 }
 button:hover{
-    background-color: rgb(99, 96, 96);
+    background-position: left;
 }
+
+hr{
+    width: 30px;
+    height: 2px;
+    background-color: #ee7155;
+}
+
 .navbar{
     font-size: 16px;
     top: 0;
     left: 0;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
 }
 .navbar-light .navbar-nav .nav-link{
      padding: 0 20px;
@@ -63,7 +90,7 @@ button:hover{
 .navbar i:hover,
 .navbar-light .navbar-nav .nav-link.active
 {
-    color: coral;
+    color: rgb(252, 116, 66);
 }
 .navbar i{
     font-size: 1.2rem;
@@ -99,7 +126,7 @@ button:hover{
 @media only screen and (max-width: 991px){
     body >nav >div > button:hover,
     body>nav>div>button:focus{
-         background-color:coral ;
+         background-color:rgb(250, 116, 67) ;
     }
 
     body>nav>div>button:hover #bar,
@@ -128,10 +155,176 @@ button:hover{
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
+    
 }
 #home span{
-   color: coral;
+   color: rgb(255, 118, 68);
 }
 #brand{
     padding-top: 0px;
+}
+
+#new .one img{
+  width: 100% ;
+  height: 100% ;
+  background-position: center center ;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
+
+#new .one .details{
+    position: absolute;
+    width: 100%; 
+    height:100%;
+    top: 0;
+    left: 0;
+    transition: 0.3s ease;
+}
+
+#new .one:hover .details{
+
+   cursor: pointer;
+   background-color: rgb(245, 178, 178, 0.5) ;
+   
+   
+}
+
+#new .one .details button{
+     display:inline-block;
+     font-size: 14px;
+     font-weight:500;
+     color: #000;
+     background:none;
+     text-transform: uppercase;
+     border-bottom: 1px solid black;
+     padding: 2.5px;
+     transform: translateY(70px);
+     transition: 0.3s ease;
+
+}
+#new .one .details button:hover{
+    color: rgb(252, 252, 252);
+    border-bottom: 1px solid rgb(255, 255, 255);
+}
+
+#new .one:nth-child(1) .details{
+    display: flex;
+    justify-content:center;
+    flex-direction:column;
+    align-items:flex-start;
+    text-align:start;
+}
+
+
+#new .one:nth-child(2) .details{
+    display: flex;
+    justify-content:center;
+    flex-direction:column;
+    align-items:center;
+    text-align:center;
+}
+
+#new .one:nth-child(3) .details{
+    display: flex;
+    justify-content:center;
+    flex-direction:column;
+    align-items:flex-end;
+    text-align: end;
+}
+
+
+
+.product{
+    cursor: pointer;
+    margin-bottom: 2rem;
+}
+
+.product img{
+    transition: 0.3s all;
+}
+
+.product:hover img{
+     opacity: 0.7;
+}
+
+.product .buy-btn{
+    background-color:#ee7155;
+    transform: translateY(20px);
+    opacity: 0;
+    transition: 0.3s all;
+}
+
+.product:hover .buy-btn{
+    transform: translateY(0);
+    opacity: 1;
+}
+.star{
+    padding: 10px 0;
+}
+.star i {
+    font-size: 0.8rem ;
+    color: rgb(240, 180, 27);
+}
+#banner{
+    background-image:url(./img/banner/2.jpg) ;
+    width: 100% ;
+    height: 60vh ;
+    background-size: cover;
+    background-position: top 70px center ;
+    background-repeat:no-repeat;
+    background-attachment: fixed;
+    display: flex ;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+#banner h4{
+    color: white;
+}
+#banner h1{
+    color: white;
+}
+footer{
+    background-color:black;
+}
+
+footer h5{
+    color: white;
+    font-weight: 700;
+    font-size: 1.2rem;
+}
+
+footer li {
+    padding-bottom: 4px;
+}
+
+footer li a{
+    font-size: 0.8rem;
+    color: rgb(172, 172, 172);
+}
+
+footer p{
+    color: rgb(209, 207, 207);
+}
+
+footer .copyright a{
+    color:black;
+    width: 38px;
+    height: 38px;
+    background-color:white;
+    display: inline-block;
+    text-align: center ;
+    line-height: 38px;
+    border-radius: 50%;
+    transition: 0.3s ease;
+    margin: 0 5px;
+
+}
+
+footer .copyright a:hover {
+    color: white;
+    background-color:rgb(0, 81, 255);
+
 }
